@@ -1,0 +1,11 @@
+../pages
+
+scorers.aa.AdamicAdarScorer(../pages)
+
+scorers.textual.JacquenetM2Scorer(../pages, ../text-archive/Archive.archive)
+
+scorers.textual.JacquenetM4Scorer(../pages, ../text-archive/Archive.archive)
+
+scorers.llamafur.LlamaFurScorer(../pages, ../llamafur/naive-llamafur-w.ser, ../top-categories/top-page2cat.ser, NaiveLlamaFur)
+
+scorers.llamafur.LlamaFurScorer(../pages, ../llamafur/llamafur-w-1.ser, ../top-categories/top-page2cat.ser, LlamaFur)

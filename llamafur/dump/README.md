@@ -1,0 +1,2 @@
+You should be able download the Wikipedia articles dump we used, named `	enwiki-20140203-pages-articles.xml.bz2` from [AcademicTorrents](http://academictorrents.com/details/9512a1f6d21e5012c06a1c9b8e2dd4796ecc77a9). If this torrent is not working, please email us at {`corrado.monti`, `paolo.boldi`} `@unimi.it`.
+Once you have that, unzip the dump, and put it in this directory.

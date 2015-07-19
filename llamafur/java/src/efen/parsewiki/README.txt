@@ -1,0 +1,1 @@
+The code contained in this package is heavily based on code realized by Sebastiano Vigna. It will be improved and released in future versions of Archive4J and MG4J, and therefore for anything -- including copyright and licence on this part -- you should refer to the Archive4J project page http://archive4j.di.unimi.it/  and MG4J page http://mg4j.di.unimi.it/ .
