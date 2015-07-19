@@ -7,10 +7,10 @@ The human-evaluated dataset we used to evaluate the unexpectedness of links in W
 
 The code we used is available in the directory `llamafur/java`.
 
-How to replicate experiments
-----------------------------
+# How to replicate experiments
 
-# Set up the environment
+Set up the environment
+----------------------
 
 In order to compile LlamaFur code, you'll need Java 8, Ant and Ivy. To install those inside a clean [Vagrant](http://vagrantup.com/) box with `ubuntu/trusty64`, you should use these lines:
 
@@ -25,7 +25,8 @@ In order to compile LlamaFur code, you'll need Java 8, Ant and Ivy. To install t
     sudo ln -s -T /usr/share/java/ivy.jar /usr/share/ant/lib/ivy.jar
 
 
-# Compile LlamaFur code 
+Compile LlamaFur code 
+----------------------
 
 If the environment is set up properly, you should just go to the directory `llamafur/java` and run
 
@@ -35,13 +36,15 @@ If the environment is set up properly, you should just go to the directory `llam
 
 Please check that a command like `java efen.scorers.llamafur.LatentMatrixEstimator --help` correctly shows help.
 
-# Download the wikipedia dump
+Download the wikipedia dump
+---------------------------
 
 You should be able download the Wikipedia articles dump we used, named `	enwiki-20140203-pages-articles.xml.bz2` from [AcademicTorrents](http://academictorrents.com/details/9512a1f6d21e5012c06a1c9b8e2dd4796ecc77a9). If this torrent is not working, please email us at {`corrado.monti`, `paolo.boldi`} `@unimi.it`.
 Please unzip this dump, and put it in a directory named `llamafur/dump`.
 
 
-# Run experiments
+Run experiments
+---------------
 
 Then, `cd` to the `llamafur/` directory and check you have these files:
 
@@ -52,8 +55,3 @@ Then, `cd` to the `llamafur/` directory and check you have these files:
 * `./evaluation/human-evaluation.tsv`, the human-made dataset
 
 Then, you can proceed to run the script with `. run-experiments.sh`. Parsing the Wikipedia snapshot will take many hours (more than 10 usually), while the LlamaFur experiments won't take as long. See the comment in the script file (`llamafur/run-experiments.sh`) for more info.
-
-
-
-
-
