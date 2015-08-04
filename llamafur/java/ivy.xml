@@ -21,7 +21,7 @@
 			<exclude org="com.sun.jmx"/>
 			<exclude org="javax.jms"/>
 		</dependency>
-		<dependency org="it.unimi.dsi" name="archive4j" rev="1.3.3"/>
+		<dependency org="it.unimi.di" name="archive4j" rev="1.3.3"/>
 		<dependency org="it.unimi.dsi" name="webgraph-big" rev="3.3.5"/>
 		<dependency org="it.unimi.dsi" name="fastutil" rev="6.3"/>
 		<dependency org="it.unimi.dsi" name="webgraph" rev="3.4.0"/>
