@@ -28,7 +28,12 @@ In order to compile LlamaFur code, you'll need Java 8, Ant and Ivy. To install t
 Compile LlamaFur code 
 ----------------------
 
-If the environment is set up properly, you should just go to the directory `llamafur/java` and run
+If the environment is set up properly, you should install git and download this repo with
+
+	sudo apt-get install git
+	git clone https://github.com/corradomonti/llamafur.git
+
+and then go to the directory `llamafur/java`. There, run:
 
 * `ant ivy-setupjars` to download dependencies
 * `ant` to compile
@@ -46,12 +51,4 @@ Please unzip this dump, and put it in a directory named `llamafur/dump`.
 Run experiments
 ---------------
 
-Then, `cd` to the `llamafur/` directory and check you have these files:
-
-* `./stopwords.txt`, stopwords, one per line
-* `./dump/enwiki-20140203-pages-articles.xml`, the wikipedia dump
-* `./run-experiments.sh`, the script
-* `./evaluation/pool.txt`, that specifies which scorers should be evaluated
-* `./evaluation/human-evaluation.tsv`, the human-made dataset
-
-Then, you can proceed to run the script with `. run-experiments.sh`. Parsing the Wikipedia snapshot will take many hours (more than 10 usually), while the LlamaFur experiments won't take as long. See the comment in the script file (`llamafur/run-experiments.sh`) for more info.
+Then, `cd` to the `llamafur/` directory where you can proceed to run the script with `sh run-experiments.sh`. Parsing the Wikipedia snapshot will take many hours (at least 10 usually), while the LlamaFur experiments won't take as long. See the comment in the script file (`llamafur/run-experiments.sh`) for more info.

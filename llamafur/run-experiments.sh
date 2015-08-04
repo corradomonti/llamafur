@@ -1,3 +1,10 @@
+
+############### INITIALIZATION ################################################
+WIKIDUMP_XML=dump/enwiki-20140203-pages-articles.xml
+STOPWORDS=stopwords.txt
+N_TOP_CATEGORIES=20000
+SEED=1234567890
+
 # The current directory should look like this:
 # ./stopwords.txt                           # <---- stopwords, one per line
 # ./dump
@@ -6,13 +13,18 @@
 # ./evaluation
 # ./evaluation/pool.txt                     # <---- specifies which scorers should be evaluated
 # ./evaluation/human-evaluation.tsv         # <---- the human-made dataset
+# 
+# Let us check this is true
+for file in "stopwords.txt" "$WIKIDUMP_XML" "evaluation/pool.txt" "evaluation/human-evaluation.tsv"
+do
+	if [ ! -f $file ]; then
+	    echo "File $file not found!"
+	    exit 1
+	fi
+done
 
-WIKIDUMP_XML=dump/enwiki-20140203-pages-articles.xml
-STOPWORDS=stopwords.txt
-N_TOP_CATEGORIES=20000
-SEED=1234567890
-
-
+# Let's check java has been compiled and it is in the classpath
+{ java efen.scorers.llamafur.LatentMatrixEstimator --help 2>&1 | grep -q "Could not find or load main class"; } && { echo 'Java LlamaFur commands not found. You should compile them and include them in the classpath. Look at the "Compile LlamaFur code" part of readme.md!' ; exit 1; }
 
 
 
@@ -73,3 +85,5 @@ java efen.evaluation.measure.BPrefMeasure pool.txt human-evaluation.tsv ../pageN
 java efen.evaluation.measure.PrecisionRecallPlot pool.txt human-evaluation.tsv ../pageName2Id.ser -o precision-recall.tsv -n ../pageId2Name.ser
 java efen.analysis.ScorerComparison ../pageName2Id.ser human-evaluation.tsv llamafur-vs-human.tsv "scorers.llamafur.LlamaFurScorer(../pages, ../llamafur/llamafur-w-1.ser, ../top-categories/top-page2cat.ser, LlamaFur)"
 cd ..
+
+echo "Results available in directory 'evaluation'"
